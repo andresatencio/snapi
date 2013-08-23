@@ -1,0 +1,6 @@
+.rojo{
+	background-color: #E74C3C;
+	color:#FFFFFF;
+	-webkit-box-shadow: inset 0 -4px #C0392B, 0 2px rgba(0,0,0,0.1);
+	text-shadow: 0px 0px #FFFFFF;
+}
