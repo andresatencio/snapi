@@ -65,3 +65,4 @@ describe('API Scrapp diarioelinformante.com.ar', function(){
 describe('API Scrapp diario el norte', function(){
 	it('Notas de portada');
 });
+

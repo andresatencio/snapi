@@ -11,6 +11,8 @@
     "request": "*",
     "cheerio": "*",
     "superagent": "*",
-    "expect" : "*"
+    "expect.js" : "*",
+    "iconv":"*",
+    "mongoose": "*"
   }
 }

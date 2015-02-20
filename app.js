@@ -4,8 +4,8 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
+  , informante = require('./routes/informante')
+  , norte = require('./routes/norte')
   , http = require('http')
   , path = require('path');
 
@@ -19,9 +19,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.cookieParser('your secret here'));
-  app.use(perimitirCrossDomain);
-  app.use(express.session());
+  app.use(permitirCrossDomain);
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
@@ -30,24 +28,35 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.inicio);
+app.get('/', informante.inicio);
 /*
  * Api diarioelinformante.com.ar
  */
-app.get('/informante', routes.portada);
-app.get('/informante/secciones/:seccion', routes.seccion);
-app.get('/informante/nota/:id', routes.nota)
+app.get('/informante', informante.portada);
+app.get('/informante/secciones/:seccion', informante.seccion);
+app.get('/informante/nota/:id', informante.nota);
 
-app.get('/notamaster.php', function(req, res){
-  console.log(req.params.id);
-})
+/*
+ * Api diarioelnorte.com.ar
+ */
+app.get('/norte', norte.portada);
+
+/*
+ * Cliente AngularJS
+ * NO TOCAR
+ */
+//app.get('/noticiaslimpias', noticiaslimpias.inicio)
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
 
+// var connection = require('./db/conexion');
+// require('./boot')
 
-function perimitirCrossDomain(req, res, next) {
+function permitirCrossDomain(req, res, next) {
   //en vez de * se puede definir SÓLO los orígenes que permitimos
   res.header('Access-Control-Allow-Origin', '*');
   //metodos http permitidos para CORS
@@ -55,3 +64,4 @@ function perimitirCrossDomain(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 }
+

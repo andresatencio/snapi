@@ -1,102 +1,118 @@
 <!DOCTYPE html>
 <html lang="es-LA">
-    <meta charset="utf-8">
-    <title>SN api</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+		<meta charset="utf-8">
+		<title>SN api</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="API de San Nicolas de los Arroyos, Buenos Aires, Argentina">
-    <meta name="author" content="Andres Atencio">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="API de San Nicolas de los Arroyos, Buenos Aires, Argentina">
+		<meta name="author" content="Andres Atencio">
 
-    <!-- Le styles -->
-    <link href="css/bootstrap.flaty.min.css" rel="stylesheet">
-    <style type="text/css">
-      .center{
-      	text-align: center;
-      }
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
+		<!-- Le styles -->
+		<link href="css/bootstrap.flaty.min.css" rel="stylesheet">
+		<style type="text/css">
+			.center{
+				text-align: center;
+			}
+			body {
+				padding-top: 20px;
+				padding-bottom: 40px;
+			}
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
+			/* Custom container */
+			.container-narrow {
+				margin: 0 auto;
+				max-width: 700px;
+			}
+			.container-narrow > hr {
+				margin: 30px 0;
+			}
 
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
+			/* Main marketing message and sign up button */
+			.jumbotron {
+				margin: 60px 0;
+				text-align: center;
+			}
+			.jumbotron h1 {
+				font-size: 72px;
+				line-height: 1;
+			}
+			.jumbotron .btn {
+				font-size: 21px;
+				padding: 14px 24px;
+			}
 
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+			/* Supporting marketing content */
+			.marketing {
+				margin: 60px 0;
+			}
+			.marketing p + h4 {
+				margin-top: 28px;
+			}
+		</style>
+		<link href="css/bootstrap-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-    <![endif]-->
-  </head>
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	 <script>
+		
 
-  <body>
-  	<div class="container">
-      <div class="jumbotron">
-        <h1>SN api</h1>
-        <p class="lead">Es un proyecto que intenta organizar la informacion de todo lo relacionado a la ciudad "San Nicolas de los Arroyos, BA, AR.". La idea es usar diferentes tecnicas para extraer esta informacion relevante y poder accesarla de una manera mas simple.</p>
-        <a class="btn btn-large btn-success" href="mailto:and.atencio@gmail.com?subject=Quiero colaborar en SN API">Colaborar!</a>
-      </div>
-      <hr>
-      <div class="row-fluid marketing">
-        <div class="span12">
-          <h4>API Noticias</h4>
-          <p>Mediante scrapping se obtiene las ultimas noticias de la localidad. La fuente es diarioelinformante.com.ar</p>
-          <p>http://snapi.aws.af.cm/<span class="label label-important">informante</span></p>
-          <p>Esto nos devuelve un array de objetos JSON con las notas de portada, como por ej.:</p>
-          <pre>
+	 };
+	 </script>
+	</head>
+	 
+	<body> 
+		<div class="container">
+			<div class="jumbotron">
+				<h1>SN api <span class="label label-important">Nueva fuente!</span></h1>
+				<p class="lead">Es un proyecto que intenta organizar la informacion de todo lo relacionado a la ciudad "San Nicolas de los Arroyos, BA, AR.". La idea es usar diferentes tecnicas para extraer esta informacion relevante y poder accesarla de una manera mas simple.</p>
+				<a class="btn btn-large btn-success" href="mailto:and.atencio@gmail.com?subject=Quiero colaborar en SN API">Colaborar!</a>
+			</div>
+			<hr>			
+			<div class="row-fluid marketing">
+				<div class="span12">
+					<div class="text-center">
+						<h4>API Noticias</h4>
+						<p>Mediante scrapping se obtiene las ultimas noticias de la localidad. La fuente es diarioelinformante.com.ar y diarioelnorte.com.ar</p>
+						<h4>Nueva fuente</h4>
+						<a href="http://snapi.aws.af.cm/norte" target="_blank" class="btn btn-large btn-success">http://snapi.aws.af.cm/<span class="label label-important">norte</span></a>
+						<br>
+						<br>
+						<a href="http://snapi.aws.af.cm/informante" target="_blank" class="btn btn-large btn-primary">http://snapi.aws.af.cm/<span class="label label-important">informante</span></a>
+						<br>
+						<p>Esto nos devuelve un array de objetos JSON con las notas de portada, como por ej.:</p>
+					</div>
+
+					<pre>
 [{
-    "titulo": "Fútbol: Nuevo amistoso para Defensores",
-    "resumen": "El conjunto de Villa Ramallo continúa sus trabajos de cara al Torneo Argentino A que comenzará en las próximas semanas. Como parte del programa de tareas Defensores está disputando partidos amistosos con rivales de fuste. En la oportunidad se midió con Douglas Haig de Pergamino.  Leer más... ",
-    "id": "27435",
-    "img": "http://diarioelinformante.com.ar/imagenes/noticias/thumb_414_Defensores_y_Douglas_Haig_Amistoso_Julio_2013.jpg"
-  },
-  {
-    "titulo": "Rugby: Resumen del fin de semana",
-    "resumen": "Los equipos de nuestra ciudad tuvieron actividad el fin de semana por los diferentes certámenes de la URR. En el Torneo de Nivel 3 Rosarino, Regatas derrotó a Municipal de Marcos Juárez por 40 a 16, por la 2ª fecha del certamen. En la próxima jornada, visitará a Los Pingüinos, en Pergamino.Por la Copa de Plata, ganó Del Acuerdo y perdió Belgrano.  Leer más... ",
-    "id": "27434",
-    "img": "http://diarioelinformante.com.ar/imagenes/noticias/thumb_274_regatas_rugby_2013_b.jpg"
-  }]
-          </pre>
-          <p>http://snapi.aws.af.cm/<span class="label label-important">informante/secciones/:seccion</span></p>
-          <p>Esto nos devuelve un array de objetos JSON con las notas de cada seccion que pasemos como parametro</p>
-          <p>http://snapi.aws.af.cm/<span class="label label-important">/informante/nota/:id</span></p>
-          <p>Esto nos devuelve un objeto JSON correspondiente al ID de la nota</p>
-        </div>
-      </div>
-      <hr>
-      <div class="footer center">
-        <p>Andres Atencio 2013</p>
-      </div>
-
-    </div> <!-- /container -->
+		"titulo": "Fútbol: Nuevo amistoso para Defensores",
+		"resumen": "El conjunto de Villa Ramallo continúa sus trabajos de cara al Torneo Argentino A que comenzará en las próximas semanas. Como parte del programa de tareas Defensores está disputando partidos amistosos con rivales de fuste. En la oportunidad se midió con Douglas Haig de Pergamino.  Leer más... ",
+		"id": "27435",
+		"img": "http://diarioelinformante.com.ar/imagenes/noticias/thumb_414_Defensores_y_Douglas_Haig_Amistoso_Julio_2013.jpg"
+	},
+	{
+		"titulo": "Rugby: Resumen del fin de semana",
+		"resumen": "Los equipos de nuestra ciudad tuvieron actividad el fin de semana por los diferentes certámenes de la URR. En el Torneo de Nivel 3 Rosarino, Regatas derrotó a Municipal de Marcos Juárez por 40 a 16, por la 2ª fecha del certamen. En la próxima jornada, visitará a Los Pingüinos, en Pergamino.Por la Copa de Plata, ganó Del Acuerdo y perdió Belgrano.  Leer más... ",
+		"id": "27434",
+		"img": "http://diarioelinformante.com.ar/imagenes/noticias/thumb_274_regatas_rugby_2013_b.jpg"
+	}]
+					</pre>
+					<p>http://snapi.aws.af.cm/<span class="label label-important">informante/secciones/:seccion</span></p>
+					<p>Esto nos devuelve un array de objetos JSON con las notas de cada seccion que pasemos como parametro</p>
+					<p>http://snapi.aws.af.cm/<span class="label label-important">/informante/nota/:id</span></p>
+					<p>Esto nos devuelve un objeto JSON correspondiente al ID de la nota</p>
+				</div>
+			</div>
+			<hr>
+			<div id="grafico"></div>
+			<div class="footer center">
+				<a href="http://andresatencio.com.ar" target="_blank">Andres Atencio 2013</a>
+			</div>
+		
+		</div>
+		 <!-- /container -->
 </body>
 </html>
